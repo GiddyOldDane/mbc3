@@ -3,6 +3,7 @@ FROM node:22
 WORKDIR /app
 
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+COPY prisma ./prisma
 
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
